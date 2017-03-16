@@ -3,8 +3,10 @@ import os
 # make a list to hold onto our items
 shopping_list = []
 
+
 def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")
+
 
 def show_help():
     clear_screen()
@@ -15,6 +17,7 @@ def show_help():
     Enter 'HELP' for this help.
     Enter 'SHOW' to see your current list.
     """)
+
 
 def show_list():
     clear_screen()
@@ -29,6 +32,7 @@ def show_list():
 
     print("-" * 10)
 
+
 def add_to_list(new_item):
     show_list()
     if len(shopping_list):
@@ -39,16 +43,17 @@ def add_to_list(new_item):
         position = 0
 
     try:
-        positon = abs(int(position))
+        position = abs(int(position))
     except ValueError:
         position = None
 
     if position is not None:
-        shopping_list.insert(position-1, new_item)
+        shopping_list.insert(position - 1, new_item)
     else:
         shopping_list.append(new_item)
 
     show_list()
+
 
 show_help()
 
