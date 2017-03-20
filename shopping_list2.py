@@ -26,10 +26,10 @@ def show_list():
     # print out the list
     print("Here's your list:")
 
-    index = 1
-    for new_item in shopping_list:
+    
+    for index, new_item in enumerate(shopping_list, start=1):
         print("{}. {}".format(index, new_item))
-        index += 1
+
 
     print("-" * 10)
 
